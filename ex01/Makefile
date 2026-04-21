@@ -6,7 +6,7 @@ OBJ_DIR		=		obj
 
 CXXFLAGS	=		-std=c++98 -Wall -Wextra -Werror -MMD -MP
 
-MAKEFLAGS	+=		--no-print-directory -j$(nproc)
+MAKEFLAGS	+=		--no-print-directory
 
 ################################################################################
 ###									FILES	 ###

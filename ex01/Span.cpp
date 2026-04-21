@@ -25,13 +25,6 @@ void Span::addNumber(int nbr)
 	tab.push_back(nbr);
 }
 
-void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-{
-	if (tab.size() + std::distance(begin, end) > _maxSize)
-		throw outOfRangeException();
-	tab.insert(tab.end(), begin, end);
-}
-
 int Span::shortestSpan()
 {
 	if (tab.size() < 2)

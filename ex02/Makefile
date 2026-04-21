@@ -1,4 +1,4 @@
-NAME		=		Easyfind
+NAME		=		Mutant
 
 CXX			=		c++
 

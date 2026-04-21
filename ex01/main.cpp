@@ -7,10 +7,12 @@
 #define GREYBG 		"\033[48;5;237m\033[1m"
 #define GREEN 		"\033[38;5;34m\033[48;5;193m"
 #define PINK 		"\033[38;5;199m\033[48;5;225m"
-#define PINK 		"\033[38;5;199m\033[48;5;225m"
-#define BLUE 		"\033[38;5;44m\033[48;5;159m"
-#define YELLOW		"\033[38;5;214m\033[48;5;229m"
-#define VIOLET		"\033[38;5;92m\033[48;5;183m"
+// #define BLUE 		"\033[38;5;44m\033[48;5;159m"
+// #define YELLOW		"\033[38;5;214m\033[48;5;229m"
+// #define VIOLET		"\033[38;5;92m\033[48;5;183m"
+
+// a class that takes an array of int and can find the smallest diff between two
+// numbers, or the biggest one.
 
 int main()
 {
@@ -30,15 +32,12 @@ int main()
 
     std::cout << std::endl << GREYBG << " ---Performance(20 000) test --- " << STD << std::endl << std::endl;
     try {
-        unsigned int size = 20000;
+		std::srand(std::time(0));
+		unsigned int size = 20000;
         Span spBig = Span(size);
-        std::vector<int> bigData;
-        
-        std::srand(std::time(0));
-        for (unsigned int i = 0; i < size; ++i)
-            bigData.push_back(std::rand());
-
-        spBig.addRange(bigData.begin(), bigData.end());
+		
+		for (unsigned int i = 0; i < size; ++i)
+			spBig.addNumber(std::rand());
 
         std::cout << PINK << "Shortest: " << spBig.shortestSpan() << STD << std::endl;
         std::cout << PINK << "Longest: "  << spBig.longestSpan() << STD << std::endl;
